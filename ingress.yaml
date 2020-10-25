@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx
+spec:
+  tls:
+    - secretName: ticketing-dev-tls
+      hosts:
+        - ticketing.dev
+  rules:
+    - host: ticketing.dev
+      http:
+        paths:
+          - backend:
+              serviceName: nginx-dpl
+              servicePort: 80
