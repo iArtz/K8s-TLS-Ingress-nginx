@@ -2,6 +2,8 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: nginx
+  annotations:
+    cert-manager.io/issuer: ca-issuer
 spec:
   tls:
     - secretName: ticketing-dev-tls

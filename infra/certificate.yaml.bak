@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ticketing-dev
+  namespace: default
+spec:
+  secretName: ticketing-dev-tls
+  issuerRef:
+    name: ca-issuer
+    kind: Issuer
+  commonName: ticketing.dev
+  dnsNames:
+    - www.ticketing.dev
